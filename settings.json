@@ -1,4 +1,5 @@
 {
     "token": "TOKEN",
-    "version": "V2, 1.24A"
+    "version": "V2, 1.24A",
+    "prefix": "mb!"
 }
