@@ -1,8 +1,6 @@
-const { Client, Intents, MessageEmbed } = require('discord.js');
-const myIntents = new Intents();
-myIntents.add('GUILD_PRESENCES', 'GUILD_MEMBERS', 'GUILDS', 'GUILD_MESSAGES');
+const Discord = require('discord.js')
+const client = new Discord.Client()
 
-const client = new Client({ ws: { intents: myIntents } });
 
 //Komennot & asetukset
 const mixer = require('./settings.json')
@@ -18,6 +16,27 @@ client.on('ready', () =>{
     komento(client, ['ping', 'test'], (message) => {
         message.channel.send('Mitä pingaat? No pong vaan!')
     })
+    
+   //Embed viestit:
+    
+    //Allsky
+    komento(client, 'allsky', (message) => {
+        const Allsky =
+          'https://allsky.mb24.fi/image-resize.jpg'
+    
+        const embed = new Discord.MessageEmbed()
+          .setTitle('LocalghostFI Allsky')
+          .setURL('https://allsky.mb24.fi')
+          .setAuthor('LocalghostFI')
+          .setImage(Allsky)
+          .setThumbnail('https://cdn.mb24.fi/Logot/Localghost/G_oranssi_1.png')
+          .setFooter('Viimeisin kuva Allskyltä. Kuva päivittyy 5min välein.')
+          .setColor('#FF7200')
+          .setTimestamp();
+    
+    
+        message.channel.send(embed)
+      }) 
 });
 
 
