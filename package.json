@@ -1,0 +1,13 @@
+{
+  "name": "MixerBotV2",
+  "version": "1.24",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "redis": "^3.0.2"
+  }
+}
