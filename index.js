@@ -17,6 +17,10 @@ client.on('ready', () =>{
         message.channel.send('Mitä pingaat? No pong vaan!')
     })
     
+    komento(client, ['github'], (message) => {
+        message.channel.send('MixerBotV2 Lähdekoodi: <https://github.com/Mixerboy24Tech/MixerbotV2>')
+    })
+    
    //Embed viestit:
     
     //Allsky
