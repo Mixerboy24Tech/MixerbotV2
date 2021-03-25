@@ -10,7 +10,7 @@ const komento = require('./komento')
 
 client.on('ready', () =>{ 
     console.log('MixerBotV2 yhdistetty palvelimelle' + mixer.version)
-    client.user.setActivity('MixerBot ' + (mixer.version))
+    client.user.setActivity('mb!apua | MixerBot ' + (mixer.version))
     jäsenet(client)
 
     komento(client, ['ping', 'test'], (message) => {
@@ -41,6 +41,24 @@ client.on('ready', () =>{
     
         message.channel.send(embed)
       }) 
+    
+    //komennot-lista
+      komento(client, 'apua', (message) => {
+        const embed2 = new Discord.MessageEmbed()
+        .setColor('#FF7200')
+	    .setTitle('Ohjekirja')
+	    .setAuthor('MixerBotV2')
+	    .setDescription('MixerBotV2 prefix on **mb!**')
+	    .addFields(
+		    { name: 'Komento', value: 'Allsky\nGithub', inline: true },
+	        { name: 'Kuvaus', value: 'Antaa viimeisimmän Allsky kameran kuvan. (Kuva päivittyy 5min välein)\nbotin lähdekoodi.', inline: true },
+	    )
+        .setTimestamp()
+        .setFooter('MixerBotV2, 1.24A', 'https://cdn.discordapp.com/avatars/824287169396080691/b90e73c687073f1f36a55f4e59b3906a.png');
+
+        message.channel.send(embed2)
+      })
+    
 });
 
 
